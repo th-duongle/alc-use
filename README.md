@@ -36,78 +36,6 @@ This project applies machine learning techniques to investigate factors associat
 
 ---
 
-## Models & Results
-
-### Binary Classification — Decision Tree
-
-| Parameter | Value |
-|---|---|
-| Algorithm | Decision Tree |
-| criterion | gini |
-| max_depth | 7 |
-| min_samples_split | 20 |
-| min_samples_leaf | 1 |
-| class_weight | balanced |
-
-| Metric | Value |
-|---|---|
-| Training Accuracy | 66.64% |
-| Test Accuracy | 64.29% |
-| Train/Test Difference | 2.35% |
-| Macro F1 | 0.58 |
-| Weighted F1 | 0.68 |
-| Most Important Feature | TV usage limit |
-
----
-
-### Multiclass Classification — Decision Tree + Bagging
-
-| Parameter | Value |
-|---|---|
-| Algorithm | BaggingClassifier (DecisionTree base) |
-| criterion | gini |
-| max_depth | 10 |
-| min_samples_split | 2 |
-| min_samples_leaf | 5 |
-| n_estimators | 15 |
-| max_samples | 1.0 |
-| bootstrap | True |
-
-| Metric | Value |
-|---|---|
-| Training Accuracy | 61.53% |
-| Test Accuracy | 32.14% |
-| Train/Test Difference | 29.39% |
-| Macro F1 | 0.30 |
-| Weighted F1 | 0.31 |
-| Most Important Feature | Days of missed school |
-
----
-
-### Regression — Gradient Boosting
-
-| Parameter | Value |
-|---|---|
-| Algorithm | GradientBoostingRegressor |
-| criterion | squared_error |
-| max_depth | 3 |
-| min_samples_split | 5 |
-| min_samples_leaf | 1 |
-| n_estimators | 30 |
-| learning_rate | 0.1 |
-
-| Metric | Value |
-|---|---|
-| Train MSE | 5.392 |
-| Test MSE | 5.417 |
-| Train RMSE | 2.322 |
-| Test RMSE | 2.327 |
-| Mean CV RMSE | 2.410 |
-| CV Std | 0.062 |
-| Most Important Feature | Frequency of fighting at school |
-
----
-
 ## Key Findings
 
 Across all three models, a consistent set of themes emerged as the most influential predictors of youth alcohol use:
@@ -128,18 +56,6 @@ Across all three models, a consistent set of themes emerged as the most influent
 - **Cross-sectional data** — NSDUH captures a single point in time, limiting causal inference
 - **Elbow plot instability** — no optimal number of base models identified in multiclass or regression, indicating weak signal in data
 
----
-
-## Requirements
-
-```
-pandas
-numpy
-scikit-learn
-matplotlib
-seaborn
-imbalanced-learn
-```
 
 ---
 ## Real-World Applications
